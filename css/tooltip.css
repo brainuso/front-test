@@ -29,12 +29,13 @@
 /*ToolTip styling*/
 .tooltip{
 	position: relative;
-	display: block;
+	display: inline-flex;
 }
 
 .tooltip .tooltip-text{
 	visibility: hidden;
-	background-color: #eeeeee;
+	background-color: #dcdcdc;
+	
 	width: 5em;
 	text-align: center;
 	padding: auto;
@@ -42,11 +43,16 @@
 	position: absolute;
 	z-index: 1;
 }
+
 .tooltip:hover .tooltip-text{
 	visibility: visible;
 	left: 100%;
 	padding: 0.25em;
 }
+
+input .tooltip:hover .tooltip-text{
+	top: 25%;
+} 
 
 .tooltip .tooltip-text::after{
 	content: "";
@@ -56,7 +62,7 @@
 	margin-left: -5px;
 	border-width: 5px;
 	border-style: solid;
-	border-color:  transparent #eeeeee transparent
+	border-color:  transparent #dcdcdc transparent
 	transparent;
 
 }
