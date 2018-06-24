@@ -1,0 +1,87 @@
+.box{
+background-color: white;
+border: 0.25em solid #cccccc;
+line-height: 7em;
+height: 7em;
+width: 7em;
+padding: 4em;
+margin: 1em;
+
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+.puff{
+transition: transform 5s, opacity 1s, z-index 2s;
+}
+/*.puff:hover{
+	transform: scale(2);
+	opacity: 0;
+}*/
+.puff:active{
+	transform: scale(2);
+	opacity: 0;
+	z-index: -1;
+}
+
+/****Animations****//*
+@keyframes puff{
+	from{height: 7em; width: 7em;}
+	to{transform: scale(2); opacity: 0}
+	
+}
+
+@keyframes expand{
+	from{height: 7em; width: 7em; }
+	to{ transform: scale(0.1);}
+}
+
+@keyframes shrink{
+	from{height: 7em; width: 7em; }
+	to{ transform: scale(-3);}
+}
+
+@keyframes bounce{
+	from{height: 7em; width: 7em; }
+	to{ }
+}
+
+@keyframes rotate{
+	from{rotate: 0;}
+	to{transform: rotate(360deg)}
+}
+
+@keyframes flip{
+	
+}*/
+
+
+
+/****Classes****/
+/*.puff:active{
+animation-name: puff ;
+animation-duration: 3s;
+}
+
+.bounce:active{
+animation: bounce 3s;
+}
+
+.shrink:active{
+animation: shrink 3s;
+}
+
+.expand:active{
+animation: expand 3s;
+}
+
+.rotate:active{
+animation: rotate 3s;
+}
+
+.flip:active{
+animation: flip 3s;
+}*/

@@ -1,0 +1,62 @@
+/***Tooltip stylesheet***/
+/*Bars styling*/
+.bar{
+	display: inline-flex;
+	align-self: flex-end;
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+	width: 1em;
+	position: relative;
+
+}
+
+#bar1{
+	height: 75px;
+	background-color: #f01;
+}
+
+#bar2{
+	height: 49px;
+	background-color: #0f1;
+}
+
+
+#bar3{
+	height: 34px;
+	background-color: #01f;
+}
+
+/*ToolTip styling*/
+.tooltip{
+	position: relative;
+	display: block;
+}
+
+.tooltip .tooltip-text{
+	visibility: hidden;
+	background-color: #eeeeee;
+	width: 5em;
+	text-align: center;
+	padding: auto;
+	border-radius: 0.25em;
+	position: absolute;
+	z-index: 1;
+}
+.tooltip:hover .tooltip-text{
+	visibility: visible;
+	left: 100%;
+	padding: 0.25em;
+}
+
+.tooltip .tooltip-text::after{
+	content: "";
+	position: absolute;
+	top: 25%;
+	right: 100%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color:  transparent #eeeeee transparent
+	transparent;
+
+}

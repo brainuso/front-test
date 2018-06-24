@@ -1,0 +1,35 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/validation.css">
+	<link rel="stylesheet" type="text/css" href="css/tooltip.css">
+</head>
+<body>
+	<form id="form" class="container">
+		<p>Validation form</p>
+		<!-- <div>
+			<label>Name: </label>
+		<input type="text" name="name" >
+		</div> -->
+		<div class="">
+			<label>Number: only numbers no spaces </label>
+			
+			<span class="tooltip">
+		<input id="number" class="" data-validate-limit="6" data-tip-start="keyup" type="number" name="number" required="true">
+		
+		 <span class="tooltip-text">value</span></span>
+		</div>
+		<!-- <div>
+			<label>Email: </label>
+		<input type="text" name="email">
+		</div> -->
+		<button id="submit" type="submit">Submit</button>
+	</form>
+</body>
+</html>
+<!-- <script type="text/javascript" src="js/tooltip.js"></script> -->
+<!-- <script type="text/javascript" src="js/validation.js"></script> -->
+<script type="text/javascript">
+	// validate("number"); 
+</script>

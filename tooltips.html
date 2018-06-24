@@ -1,0 +1,29 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/tooltip.css">
+</head>
+<body>
+	
+	<div class="container">
+		<p>Mouse over the bars to view the tool tips</p>
+		<div class="container">
+		  <span id="bar1" class="bar" data-tip-start="mouseover" data-tip-end="mouseout"></span>
+		  <span id="bar2" class="bar" data-tip-start="mouseover" data-tip-end="mouseout"></span>
+		  <span id="bar3" class="bar" data-tip-start="mouseover"data-tip-end="mouseout"></span>
+		</div>
+		
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="js/tooltip.js"></script>
+<script type="text/javascript">
+
+/*Tooltip declaration*/
+/*Tooltip( Id, tooltip value) */
+ tooltip("bar1", "value <strong>75<strong>");
+ tooltip("bar2", "value <strong>49<strong>");
+ tooltip("bar3", "value <strong>34<strong>");
+
+</script>

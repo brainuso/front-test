@@ -1,0 +1,31 @@
+/****Default style sheet****/
+body, html{
+	text-align: center !important;
+	background-color: #dddddd;
+	font: "Verdana";
+	font-size: 14px;
+}
+/*
+@media (min-width: 768px){
+	font-size: large;
+	.container{
+		max-width: 600px;
+	}
+}*/
+
+/*********Layout***********/
+.container{
+	display: flex;
+	padding: 2em;
+	margin: auto 2em auto 2em;
+	width: auto;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.pull-right{
+	display: flex;	
+}
+
+
+

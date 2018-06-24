@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+* {font-family:Helvetica,Arial;}
+
+.anim-container{
+  width:300px;
+  height:70px;
+  background-color:#eeeeee;
+  position:relative;
+  border:2px solid #888888;
+}
+
+
+.box,.box-manual{
+  display:inline-block;
+  background-color:blue;
+  width:40px;
+  height:40px;
+  margin:5px;
+}
+
+.box,
+#cbox:checked + .anim-container .box-manual{
+  -webkit-animation: launch 2s; 
+}
+
+#cbox:checked ~ .anim-container #replay3::before{
+  content:'re';
+}
+
+#replay2,#replay3{
+  display:block;
+  position:absolute;
+  bottom:5px;
+  right:5px;
+  color:#333333;
+}
+
+#replay:active + .anim-container .box, 
+#replay2:active + .box,
+#replay3:active + .box-manual{
+  -webkit-animation-name:none!important;
+}
+
+#replay2:active{
+  transform:translateX(-1000px);
+}
+
+@-webkit-keyframes launch{
+  from {
+    transform:translateX(0px);
+  }
+  to{
+    transform:translateX(250px);
+  }
+}
+</style>
+
+<h3><a href="https://www.emailonacid.com/blog/article/email-development/restart-css-animations-in-email-using-active-pseudo-class" target="_new">How to Restart CSS Animations in Email Using The :active Pseudo-class</a></h3>
+ (View in a Webkit based browser like Chrome or Safari)<BR><BR>
+
+<B>1. Basic</B><BR><BR>
+<a href="#r" id="replay">replay animation</a>
+<div class="anim-container"><div class="box"></div></div>
+<BR><BR><HR>
+
+
+
+<B>2. Positioned Trigger</B><BR><BR>
+<div class="anim-container">
+  <a href="#r" id="replay2">replay animation</a>
+  <div class="box"></div>
+</div>
+<BR><BR><HR>
+
+<B>3. Manual Start</B><BR><BR>
+
+<input type="radio" id="cbox">
+<div class="anim-container">
+  <label for="cbox" id="replay3">play animation</label>
+  <div class="box-manual"></div>
+</div>
+
+
+
+
+</body>
+</html>

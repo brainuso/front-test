@@ -1,0 +1,48 @@
+/****Validation form style sheet****/
+form{
+	background-color: #eeeeee;
+	flex-direction: column;
+	height: 50%;
+	width: 50%;
+	margin: 5em;
+	border: 0.125em solid #cccccc;
+}
+
+
+
+input{
+	border: 0.25em;
+	box-shadow: 0.125em;
+	margin: 0.5em auto;
+	padding: 1em;
+}
+
+/*Turn of arrows in input number field*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+button{
+	justify-content: flex-end;
+	width: 5em;
+	height: 2em;
+	background-color: green;
+	color: white;
+	margin-left: 50%;
+	border-radius: 0.5em;
+	border: none;
+}
+
+/***Validation effects***/
+.warning{
+	margin-left: 50%;
+	color: #f00;
+}
+
+.disabled{
+	opacity: 0.5;
+	cursor: not-allowed;
+}
