@@ -7,22 +7,21 @@
 <body>
 
 <div class="">
-<button id="reset" class="pull-right">Reset</button>
+<button> <a href="javascript:history.go(0)">Reset</a></button>
 </div>
 <div class="container grid">
+	<!-- This was used to test the checkbox click event. Further explanation in the animation.css file -->
+	<!--<div>
+		<input type="checkbox" id="check-puff" value="value" class="box puff">
+		<label class="box puff" id="puff" for="check-puff">puff</label>
+	</div> -->
 	<span class="box puff" id="puff" >puff</span>
 	<span class="box bounce" id="bounce" >bounce</span>
-	<span class="box shrink" id="shrink" >shrink</span>
+	<span class="box shrink" id="shrink">shrink</span>
 	<span class="box expand" id="expand" >expand</span>
 	<span class="box rotate" id="rotate" >rotate</span>
 	<span class="box flip" id="flip" >flip</span>
-
-	<!-- <a class="box puff" id="puff" href="#">puff</a>
-	<a class="box bounce" id="bounce" href="#">bounce</a>
-	<a class="box shrink" id="shrink" href="#">shrink</a>
-	<a class="box expand" id="expand" href="#">expand</a>
-	<a class="box rotate" id="rotate" href="#">rotate</a>
-	<a class="box flip" id="flip" href="#">flip</a> -->
+	<input type="checkbox" id="rotate" value="value" class="box puff">
 </div>
 </body>
 </html>
