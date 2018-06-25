@@ -50,7 +50,7 @@
 	padding: 0.25em;
 }
 
-input .tooltip:hover .tooltip-text{
+input.tooltip:hover .tooltip-text{
 	top: 25%;
 } 
 

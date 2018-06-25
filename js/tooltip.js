@@ -29,3 +29,48 @@ tooltip =(objId, label) =>{
 
 }
 
+/*	/*Number validation function
+let button = document.getElementById('submit');
+let regNum = /^\d+$/;
+ 
+     numValidate =(num) =>{
+     	var element = document.getElementById('number');
+     	
+     	
+     	if(childTip == null){
+     		var parentTip = element.parentNode;
+     	
+     	var childTip = document.createElement("span");
+     	parentTip.classList.add("tooltip");
+     	childTip.classList.add("tooltip-text");	
+     		parentTip.appendChild(childTip); 
+     	}
+     		limit = element.getAttribute("data-validate-limit");
+	/*checks string against numeric regexpression
+	if(num.match(regNum)){
+    	message = "number";
+		if (num.length > limit) {
+             message = `only ${limit} digits are allowed.`;
+           button.disabled = true;
+           button.classList.add("disabled");
+           childTip.classList.add("warning");
+           childTip.innerHTML = message;
+		}else
+	     {  
+	     	button.disabled = false; 
+	     	button.classList.remove("disabled");
+	       childTip.classList.remove("warning");
+	     }
+    } else{
+		 message = "not number";
+		button.disabled = true ;
+		button.classList.add("disabled");
+		childTip.classList.add("warning");
+		childTip.innerHTML = message;
+	}
+     
+     childTip.innerHTML = message;
+//parentTip.removeChild(childTip);
+     	
+
+	}*/

@@ -1,5 +1,6 @@
 /***Validation Plugin***/
 /*This plugin will work for text as well, the only change is message text */
+
 /*Capture submit button id*/
 let button = document.getElementById('submit');
 
@@ -25,9 +26,11 @@ validateInput = (ObjId, regEx) =>{
         /*get limit value from custom data*- attribute*/
       	limit = element.getAttribute("data-validate-limit");
      		var val = element.value;
-
-           /*create disabled function for validation styling and message*/
+       
+           /*disabled function definition for validation styling and appending 
+           tooltip message*/
            disabled = () =>{
+
 	        /*append childTip to  parentTip */
 	        parentTip.appendChild(childTip);
             /*disable and add disabled class to submit button,
@@ -39,11 +42,13 @@ validateInput = (ObjId, regEx) =>{
             }
             /*check if value is empty*/
             if(val ===""){
+              childTip.innerHTML ="";
             	 message = "Value is required";
             	 disabled();
             }
      		/*check if input value matches regex*/
      		else if(!val.match(regEx)){
+          childTip.innerHTML = "";
                 message = "Invalid input: No alphabet or spaces allowed";
     	       disabled();
 		    }
@@ -56,7 +61,7 @@ validateInput = (ObjId, regEx) =>{
 		    else{
 		   	button.disabled = false; 
 	     	button.classList.remove("disabled");
-	     	/*remove child-tip child elements*/
+	     	 /*remove child-tip child elements*/
 	     	 while(true){
               parentTip.removeChild(document.getElementById("child-tip"));
 	     	 }
