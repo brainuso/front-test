@@ -1,103 +1,67 @@
-
-
-//let tooltipText = document.getElementById("tooltip-text");
+/***Validation Plugin***/
+/*This plugin will work for text as well, the only change is message text */
+/*Capture submit button id*/
 let button = document.getElementById('submit');
 
+/*Validation function parsing element ID and regular expression for 
+validation*/
+validateInput = (ObjId, regEx) =>{
+   var element = document.getElementById(ObjId);
+   /*key up event listener for HTML element*/
+   element.addEventListener("keyup", function (){
+   	/*assign ID to <span> parent node for element*/
+   element.parentNode.id = "parent-tip";
+   var parentTip = document.getElementById("parent-tip");
 
-tooltip = (ObjId, label) =>{
-	ObjId.classList.add("tooltip");
-	display = document.createElement("span");
-		display.classList.add("tooltip-text");
-		display.innerHTML = message;
-        element.append(display);
-     	};
+   /*create <span> element and assign ID*/
+        var childTip = document.createElement("span");
+     	childTip.id = "child-tip";
 
+        /*add classes tooltip and tooltip-text to parentTip and childTip
+     	respectively*/
+     	parentTip.classList.add("tooltip");
+     	childTip.classList.add("tooltip-text");	
+         
+        /*get limit value from custom data*- attribute*/
+      	limit = element.getAttribute("data-validate-limit");
+     		var val = element.value;
 
-/*parse id, limit, invalid message */
-
-validate = (ObjId) =>{
-	var element = document.getElementById(ObjId);
-	element.addEventListener("keyup", function (){
-		if(element.required == true){
-			promptMessage = "Value is required";
-		}
-
-		//using typeof may negate an input if a user wants to store numbers as text
-	switch(element.type){
-		case "number":
-		    regEx = /^\d+$/;
-		    limit = element.getAttribute("data-validate-limit");
-		     
-		    invalidMessage = `Only ${limit} digits allowed`;
-		    if(element.value ==""){
-               // tooltipText.innerHTML = promptMessage;
-
-		    }else{
-		    if (element.value.length > limit) {
-              button.disabled = true;
-              button.classList.add("disabled");
-              // tooltipText.classList.add("warning");
-              // tooltipText.innerHTML = invalidMessage;
+           /*create disabled function for validation styling and message*/
+           disabled = () =>{
+	        /*append childTip to  parentTip */
+	        parentTip.appendChild(childTip);
+            /*disable and add disabled class to submit button,
+    	        add warning class to childTip*/
+		        button.disabled = true;
+          		button.classList.add("disabled");
+          		childTip.classList.add("warning");
+          		childTip.innerHTML = message;
+            }
+            /*check if value is empty*/
+            if(val ===""){
+            	 message = "Value is required";
+            	 disabled();
+            }
+     		/*check if input value matches regex*/
+     		else if(!val.match(regEx)){
+                message = "Invalid input: No alphabet or spaces allowed";
+    	       disabled();
 		    }
-		    else{  
-	     	  button.disabled = false; 
-	     	  button.classList.remove("disabled");
-	          // tooltipText.classList.remove("warning");
-	          // tooltipText.innerHTML = "";
-	        }
-		    	
+			/*check if input length exceeds limit*/
+		    else if (val.length > limit) {
+			message = `Only ${limit} digits are allowed.`;
+            disabled();
 		    }
-		break;
-		case "text":
-		    regEx = /^[A-za-z ]+$/ ;
-		    invalidMessage = 'only alphanumric text';
-		break;
-		default:
-		    invalidMessage = 'No value';
-	} 
-	
-
-		if( promptMessage != ""){
-			message = promptMessage;
-		} else if(invalidMessage != ""){
-			message = invalidMessage;
-		}
-		return message;
-});
-	tooltip(element, message);
-
-}
-
-
-
-
-/*/*Number validation function
-
- onkeyup="numValidate(this.value)"
-     numValidate =(num) =>{
-
-	/*checks string against numeric regexpression
-	if(num.match(regNum)){
-    	message = "number"
-		if (num.length > maxLength) {
-             message = "only 5 digits are allowed.";
-           button.disabled = true;
-           button.classList.add("disabled");
-           tooltipText.classList.add("warning");
-		}else
-	     {  
-	     	button.disabled = false; 
+		   	/*remove validation styling*/
+		    else{
+		   	button.disabled = false; 
 	     	button.classList.remove("disabled");
-	       tooltipText.classList.remove("warning");
-	     }
-    } else{
-		 message = "not number"
-		button.disabled = true ;
-		button.classList.add("disabled");
-		tooltipText.classList.add("warning");
-	}
-     
-     tooltipText.innerHTML = message;
+	     	/*remove child-tip child elements*/
+	     	 while(true){
+              parentTip.removeChild(document.getElementById("child-tip"));
+	     	 }
+		    }
+	    })
+   	
+   }
 
-	}
-*/
