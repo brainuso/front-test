@@ -1,3 +1,8 @@
+.container{
+	display: inline-flex;
+	align-items: baseline;
+}
+
 .box{
 background-color: white;
 border: 0.25em solid #cccccc;
@@ -6,47 +11,52 @@ height: 7em;
 width: 7em;
 padding: 4em;
 margin: 1em;
-
+z-index: 2;
 }
 
 a{
 	text-decoration: none;
 	color: inherit;
 }
+/*I was testing the option of using a checkbox to hold the click event
+the animation was not fluid. The transform scale() property acted on the checkbox and
+while the puff box faded*/
 
-.puff{
-transition: transform 5s, opacity 1s, z-index 2s;
-}
-/*.puff:hover{
-	transform: scale(2);
-	opacity: 0;
-}*/
-.puff:active{
-	transform: scale(2);
-	opacity: 0;
-	z-index: -1;
-}
+ input[type="checkbox"]{
+ 	position: absolute;
+ 	  top: -9999px;
+   left: -9999px;
+ }
 
-/****Animations****//*
+ input[type="checkbox"]:checked + label.puff{
+ 	animation: puff 3s forwards;
+ }
+
+/****Animations****/
 @keyframes puff{
 	from{height: 7em; width: 7em;}
-	to{transform: scale(2); opacity: 0}
+	to{transform: scale(2); opacity: 0; z-index: 1;}
 	
 }
 
 @keyframes expand{
 	from{height: 7em; width: 7em; }
-	to{ transform: scale(0.1);}
+	to{ transform: scale(2); z-index: 1;}
 }
 
 @keyframes shrink{
 	from{height: 7em; width: 7em; }
-	to{ transform: scale(-3);}
+	to{ transform: scale(0.01);}
 }
 
-@keyframes bounce{
-	from{height: 7em; width: 7em; }
-	to{ }
+@keyframes bounce{ 
+    0%   {transform: scale(1,1) translateY(0); }
+    10%  {transform: scale(1.1,0.9) translateY(0); }
+    30%  {transform: scale(0.9,1.1) translateY(-80px); }
+    50%  {transform: scale(1.1,0.8) translateY(0); }
+    57%  {transform: scale(1,1);}
+    64%  {transform: scale(1,1);}
+    100% {transform: scale(1,1);}
 }
 
 @keyframes rotate{
@@ -55,33 +65,36 @@ transition: transform 5s, opacity 1s, z-index 2s;
 }
 
 @keyframes flip{
-	
-}*/
+	from{}
+	to{transform: rotateY(360deg);}
+}
 
 
 
 /****Classes****/
-/*.puff:active{
-animation-name: puff ;
-animation-duration: 3s;
-}
+/*.puff:checked{
+animation: puff 3s forwards;
+}*/
 
-.bounce:active{
+.puff:hover{
+animation: puff 3s forwards;
+}
+.bounce:hover{	
 animation: bounce 3s;
 }
 
-.shrink:active{
-animation: shrink 3s;
+.shrink:hover{
+animation: shrink 3s forwards;
 }
 
-.expand:active{
-animation: expand 3s;
+.expand:hover{
+animation: expand 3s forwards;
 }
 
-.rotate:active{
-animation: rotate 3s;
+.rotate:hover{
+animation: rotate 3s forwards;
 }
 
-.flip:active{
-animation: flip 3s;
-}*/
+.flip:hover{
+animation: flip 3s forwards;
+}

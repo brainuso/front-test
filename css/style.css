@@ -5,13 +5,6 @@ body, html{
 	font: "Verdana";
 	font-size: 14px;
 }
-/*
-@media (min-width: 768px){
-	font-size: large;
-	.container{
-		max-width: 600px;
-	}
-}*/
 
 /*********Layout***********/
 .container{
@@ -21,11 +14,9 @@ body, html{
 	width: auto;
 	flex-wrap: wrap;
 	justify-content: center;
+	
 }
 
-.pull-right{
-	display: flex;	
-}
 
 
 
